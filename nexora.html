@@ -713,6 +713,20 @@
   .contact-hours{ margin-top:24px; padding-top:24px; border-top:1px solid var(--line); font-size:13.5px; color:var(--muted); line-height:1.8; }
   .contact-hours b{ color:var(--white); }
 
+  /* ================= CONNECT HIGHLIGHT ================= */
+  .connect-visual{--mouse-x:50%;--mouse-y:50%;position:relative;isolation:isolate;overflow:hidden;min-height:245px;margin:-12px -12px 28px;padding:26px;border:1px solid rgba(140,170,220,.18);border-radius:16px;background:radial-gradient(ellipse at 50% 110%,rgba(26,79,214,.24),transparent 62%),rgba(4,9,20,.58)}
+  .connect-visual::before{content:"";position:absolute;z-index:-1;inset:-1px;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(180px circle at var(--mouse-x) var(--mouse-y),rgba(111,168,255,.19),transparent 75%)}
+  .connect-visual:hover::before{opacity:1}
+  .connect-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.72}
+  .connect-orbit{position:relative;width:100%;height:190px;display:grid;place-items:center}
+  .connect-orbit::before,.connect-orbit::after{content:"";position:absolute;width:164px;height:164px;border:1px solid rgba(111,168,255,.15);border-radius:50%}
+  .connect-orbit::after{width:112px;height:112px;border-color:rgba(111,168,255,.2)}
+  .connect-core{position:relative;z-index:1;width:58px;height:58px;display:grid;place-items:center;border:1px solid rgba(111,168,255,.4);border-radius:18px;background:linear-gradient(145deg,#173a79,#0b1732);box-shadow:0 0 34px rgba(59,124,240,.25);color:var(--blue-3);font:700 17px 'Space Grotesk',sans-serif;letter-spacing:.05em}
+  .connect-chip{position:absolute;z-index:1;padding:7px 11px;border:1px solid rgba(140,170,220,.23);border-radius:99px;background:rgba(10,18,36,.92);color:#c2d8f8;font-size:10px;letter-spacing:.04em;box-shadow:0 8px 22px rgba(0,0,0,.24)}
+  .connect-chip:nth-of-type(1){top:8px;left:calc(50% - 40px)}.connect-chip:nth-of-type(2){right:2%;top:58px}.connect-chip:nth-of-type(3){right:9%;bottom:6px}.connect-chip:nth-of-type(4){left:8%;bottom:6px}.connect-chip:nth-of-type(5){left:0;top:58px}
+  .connect-caption{position:absolute;inset:auto 0 0;text-align:center;color:var(--muted);font:10px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+  @media(max-width:560px){.connect-visual{margin:-16px -16px 24px;padding:18px 10px}.connect-chip{font-size:9px;padding:6px 8px}.connect-orbit{height:175px}}
+
   form .f-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
   .field{ margin-bottom:16px; }
   .field label{ display:block; font-size:12.5px; color:var(--muted); margin-bottom:8px; font-weight:500; }
@@ -742,6 +756,17 @@
   footer .fright{ display:flex; gap:22px; align-items:center; }
   footer a.replay{ font-size:12.5px; color:var(--muted); border:1px solid var(--line); padding:8px 14px; border-radius:100px; }
   footer a.replay:hover{ color:var(--white); border-color:var(--blue-2); }
+  .site-footer{position:relative;isolation:isolate;overflow:hidden;margin:24px clamp(14px,3vw,40px) 28px;padding:58px clamp(24px,5vw,64px) 26px;border:1px solid var(--line);border-radius:24px;background:#080d18;color:var(--muted)}
+  .site-footer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(125% 125% at 50% 0%,rgba(15,15,17,.35) 45%,rgba(60,162,250,.12) 100%)}
+  .sf-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1.15fr;gap:38px;position:relative;z-index:1}.sf-brand{display:inline-flex;align-items:center;gap:10px;color:var(--white);font:700 23px 'Space Grotesk',sans-serif;letter-spacing:.03em}
+  .sf-brand .mark{width:30px;height:30px}.sf-brand .mark svg{width:100%;height:100%}.sf-intro{max-width:250px;margin-top:14px;color:var(--muted);font-size:13px;line-height:1.75}
+  .sf-col h3{margin:3px 0 17px;color:var(--white);font:600 14px 'Space Grotesk',sans-serif}.sf-col ul{display:grid;gap:11px;list-style:none}.sf-col li,.sf-col a{font-size:13px;color:var(--muted);line-height:1.5}.sf-col a{transition:color .2s}.sf-col a:hover{color:var(--blue-3)}
+  .sf-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}.sf-contact-item svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--blue-3)}.sf-hours{margin-top:15px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;line-height:1.7;color:var(--muted-2)}
+  .sf-rule{height:1px;margin:30px 0 16px;border:0;background:var(--line)}.sf-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted-2)}.sf-bottom-links{display:flex;gap:18px;flex-wrap:wrap}.sf-bottom a:hover{color:var(--blue-3)}
+  .sf-wordmark{position:relative;z-index:1;height:clamp(112px,21vw,250px);margin:10px 0 -62px;cursor:default;user-select:none}.sf-wordmark svg{width:100%;height:100%;overflow:visible}.sf-wordmark text{font-family:'Space Grotesk',sans-serif;font-size:120px;font-weight:700;letter-spacing:5px}.sf-word-base{fill:transparent;stroke:rgba(111,168,255,.4);stroke-width:.8}.sf-word-reveal{fill:url(#sfWordGradient);stroke:rgba(188,216,255,.72);stroke-width:.5;opacity:0;transition:opacity .35s}.sf-wordmark.is-active .sf-word-reveal{opacity:1}
+  @media(max-width:900px){.sf-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.sf-brand-col{grid-column:1/-1}}
+  @media(max-width:560px){.site-footer{margin:12px;padding:34px 22px 22px;border-radius:18px}.sf-grid{grid-template-columns:1fr 1fr;gap:25px 18px}.sf-contact-col{grid-column:1/-1}.sf-wordmark{height:100px;margin-bottom:-25px}.sf-wordmark text{font-size:105px}.sf-bottom{align-items:flex-start;flex-direction:column}}
+  @media(prefers-reduced-motion:reduce){.sf-word-reveal{transition:none}}
 
   /* ============ responsive ============ */
   @media (max-width:980px){
@@ -864,6 +889,18 @@
   .hero-off .thumb-card img,.hero-off .thumb-card::after{animation-play-state:paused}
   @media(hover:hover){.hero-slider .thumb-card:hover img{transform:scale(1.05)}}
   @media(prefers-reduced-motion:reduce){.hero-slider .thumb-card img,.hero-slider .thumb-card::after{animation:none!important}}
+  /* Cinematic hero motion, kept subtle and GPU friendly. */
+  .hero-slider .slider-item::before{content:"";position:absolute;inset:-2%;z-index:0;background-image:inherit;background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.08);will-change:transform}
+  .hero-slider .slider-item .slide-overlay{z-index:1}
+  .hero-slider .slider-item.active::before{animation:heroPhotoSettle 7s var(--silk) both}
+  @keyframes heroPhotoSettle{from{transform:scale(1.13)}to{transform:scale(1.025)}}
+  .hero-slider .slider-item h1.hero-title .grad{background-size:220% 100%;animation:heroTextGlow 5s ease-in-out infinite alternate}
+  @keyframes heroTextGlow{from{background-position:0% 50%;filter:drop-shadow(0 0 0 rgba(111,168,255,0))}to{background-position:100% 50%;filter:drop-shadow(0 0 12px rgba(59,124,240,.32))}}
+  #home .eyebrow .dot{position:relative}
+  #home .eyebrow .dot::after{content:"";position:absolute;inset:-5px;border:1px solid rgba(111,168,255,.6);border-radius:50%;animation:heroDotPulse 2.6s ease-out infinite}
+  @keyframes heroDotPulse{0%{transform:scale(.65);opacity:.8}100%{transform:scale(1.8);opacity:0}}
+  .hero-off .slider-item.active::before,.hero-off .slider-item h1.hero-title .grad,.hero-off #home .eyebrow .dot::after{animation-play-state:paused}
+  @media(prefers-reduced-motion:reduce){.hero-slider .slider-item.active::before,.hero-slider .slider-item h1.hero-title .grad,#home .eyebrow .dot::after{animation:none!important}.hero-slider .slider-item::before{transform:none;will-change:auto}}
 </style>
 </head>
 <body>
@@ -1058,7 +1095,7 @@
     <div class="slider-thumbs" id="sliderThumbs">
       
       <div class="thumb-card active" data-slide="0">
-        <img src="images/services/web-platforms.jpg" width="720" height="1030" decoding="async" onerror="this.style.opacity=0" alt="Web Development" />
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" fetchpriority="high" alt="Code on a screen for web platform development" />
         <div class="thumb-overlay">
           <span class="tc-tag">01 · Web</span>
           <h4 class="tc-title">WEB PLATFORMS</h4>
@@ -1066,7 +1103,7 @@
       </div>
 
       <div class="thumb-card" data-slide="1">
-        <img src="images/services/enterprise-erp.jpg" width="720" height="1030" decoding="async" onerror="this.style.opacity=0" alt="Custom Software" />
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" alt="Developer working on custom business software" />
         <div class="thumb-overlay">
           <span class="tc-tag">02 · Software</span>
           <h4 class="tc-title">ENTERPRISE ERP</h4>
@@ -1074,7 +1111,7 @@
       </div>
 
       <div class="thumb-card" data-slide="2">
-        <img src="images/services/mobile-apps.jpg" width="720" height="1030" decoding="async" onerror="this.style.opacity=0" alt="Mobile Development" />
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" alt="Smartphone representing mobile app development" />
         <div class="thumb-overlay">
           <span class="tc-tag">03 · Apps</span>
           <h4 class="tc-title">MOBILE APPS</h4>
@@ -1082,7 +1119,7 @@
       </div>
 
       <div class="thumb-card" data-slide="3">
-        <img src="images/services/cloud-devops.jpg" width="720" height="1030" decoding="async" onerror="this.style.opacity=0" alt="Cloud Infrastructure" />
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" alt="Cloud server infrastructure" />
         <div class="thumb-overlay">
           <span class="tc-tag">04 · Cloud</span>
           <h4 class="tc-title">CLOUD & DEVOPS</h4>
@@ -1090,7 +1127,7 @@
       </div>
 
       <div class="thumb-card" data-slide="4">
-        <img src="images/services/cyber-defense.jpg" width="720" height="1030" decoding="async" onerror="this.style.opacity=0" alt="Cybersecurity" />
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" alt="Cybersecurity and digital threat defense" />
         <div class="thumb-overlay">
           <span class="tc-tag">05 · Security</span>
           <h4 class="tc-title">CYBER DEFENSE</h4>
@@ -1433,6 +1470,15 @@
 
   <div class="contact-grid">
     <div class="contact-panel contact-info">
+      <div class="connect-visual" aria-label="Nexora services: web, software, mobile, cloud and security" data-connect-visual>
+        <canvas class="connect-canvas" aria-hidden="true"></canvas>
+        <div class="connect-orbit" aria-hidden="true">
+          <span class="connect-chip">Web</span><span class="connect-chip">Software</span>
+          <span class="connect-chip">Mobile</span><span class="connect-chip">Cloud</span><span class="connect-chip">Security</span>
+          <div class="connect-core">NX</div>
+          <span class="connect-caption">One team for your next big idea</span>
+        </div>
+      </div>
       <h3>Reach Nexora directly</h3>
       <p>We read everything that comes in through the form below, but if it's urgent, these two channels get the fastest reply.</p>
 
@@ -1494,22 +1540,47 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer>
-  <div class="fbrand">
-    <span class="mark"><svg viewBox="0 0 64 64" fill="none"><path d="M14 10 L14 54 L24 54 L24 26 L44 54 L54 54 L54 10 L44 10 L44 38 L24 10 Z" fill="url(#navGrad)"/></svg></span>
-    NEXORA
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div class="sf-brand-col"><a class="sf-brand" href="nexora.html" aria-label="Nexora home"><span class="mark"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M14 10 L14 54 L24 54 L24 26 L44 54 L54 54 L54 10 L44 10 L44 38 L24 10 Z" fill="url(#navGrad)"/></svg></span>NEXORA</a><p class="sf-intro">Full-stack technology for businesses. One team for web, software, cloud, security, and what comes next.</p></div>
+    <div class="sf-col"><h3>Explore</h3><ul><li><a href="nexora.html">Home</a></li><li><a href="#projects">Projects</a></li><li><a href="#about">About Nexora</a></li><li><a href="plans.html">Services &amp; Plans</a></li></ul></div>
+    <div class="sf-col"><h3>Helpful links</h3><ul><li><a href="contact.html">Get a quote</a></li><li><a href="contact.html">Project support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of service</a></li></ul></div>
+    <div class="sf-col sf-contact-col"><h3>Contact Nexora</h3>
+      <div class="sf-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:formrule64@gmail.com">formrule64@gmail.com</a></div>
+      <div class="sf-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 16.5v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.7 2 2 0 0 1 3.1 1.5h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7 9.5a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1Z"/></svg><a href="https://wa.me/9779866697309" target="_blank" rel="noopener">+977 986 669 7309 · WhatsApp</a></div>
+      <p class="sf-hours">Support hours: 9 AM–8 PM, Monday–Saturday (Nepal Time).<br>Typical response: within 1 hour during support hours.</p>
+    </div>
   </div>
-  <p>© 2026 Nexora. Innovate · Build · Elevate.</p>
-  <div class="fright">
-    <a class="replay" id="replayBtn" href="nexora.html">↻ Replay intro</a>
-    <a href="https://wa.me/9779866697309" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="mailto:formrule64@gmail.com">Email</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-  </div>
+  <hr class="sf-rule">
+  <div class="sf-bottom"><span>© <span id="footerYear">2026</span> Nexora. Innovate · Build · Elevate.</span><div class="sf-bottom-links"><a class="replay" id="replayBtn" href="nexora.html">↻ Replay intro</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+  <div class="sf-wordmark" data-wordmark aria-label="Nexora"><svg viewBox="0 0 900 180" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs><linearGradient id="sfWordGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#6fa8ff"/><stop offset="28%" stop-color="#3b7cf0"/><stop offset="55%" stop-color="#bcd8ff"/><stop offset="78%" stop-color="#3b7cf0"/><stop offset="100%" stop-color="#6fa8ff"/></linearGradient><radialGradient id="sfWordMask" gradientUnits="userSpaceOnUse" cx="450" cy="90" r="170"><stop offset="0%" stop-color="white"/><stop offset="100%" stop-color="black"/></radialGradient><mask id="sfRevealMask"><rect width="900" height="180" fill="url(#sfWordMask)"/></mask></defs>
+    <text class="sf-word-base" x="450" y="112" text-anchor="middle">NEXORA</text><text class="sf-word-reveal" x="450" y="112" text-anchor="middle" mask="url(#sfRevealMask)">NEXORA</text>
+  </svg></div>
 </footer>
 
 <script>
+  // Contact card spotlight and lightweight ambient particle field.
+  (function(){
+    const card=document.querySelector('[data-connect-visual]');if(!card)return;
+    if(matchMedia('(hover:hover) and (pointer:fine)').matches)card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--mouse-x',(e.clientX-r.left)+'px');card.style.setProperty('--mouse-y',(e.clientY-r.top)+'px')});
+    const canvas=card.querySelector('canvas'),ctx=canvas.getContext('2d');if(!ctx)return;
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;let w=0,h=0,raf=0;
+    const dots=Array.from({length:34},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.4+.5,vx:(Math.random()-.5)*.0003,vy:(Math.random()-.5)*.0003,a:Math.random()*.4+.18}));
+    const resize=()=>{const r=card.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);w=r.width;h=r.height;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);draw()};
+    const draw=()=>{ctx.clearRect(0,0,w,h);dots.forEach(p=>{ctx.beginPath();ctx.arc(p.x*w,p.y*h,p.r,0,Math.PI*2);ctx.fillStyle='rgba(135,183,255,'+p.a+')';ctx.fill();if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>1)p.vx*=-1;if(p.y<0||p.y>1)p.vy*=-1}});if(!reduce)raf=requestAnimationFrame(draw)};
+    const observer=new ResizeObserver(resize);observer.observe(card);resize();
+    addEventListener('pagehide',()=>{cancelAnimationFrame(raf);observer.disconnect()},{once:true});
+  })();
+
+  // Footer wordmark reveals a Nexora-blue gradient beneath the pointer.
+  (function(){
+    const wordmark=document.querySelector('[data-wordmark]'),mask=document.getElementById('sfWordMask');if(!wordmark||!mask)return;
+    const setPointer=e=>{const r=wordmark.getBoundingClientRect();mask.setAttribute('cx',String((e.clientX-r.left)/r.width*900));mask.setAttribute('cy',String((e.clientY-r.top)/r.height*180));wordmark.classList.add('is-active')};
+    wordmark.addEventListener('pointermove',setPointer);wordmark.addEventListener('pointerleave',()=>wordmark.classList.remove('is-active'));
+    const year=document.getElementById('footerYear');if(year)year.textContent=new Date().getFullYear();
+  })();
+
   // ---- Intro sequence control ----
   const intro = document.getElementById('intro');
   const skipBtn = document.getElementById('skipBtn');
@@ -1610,7 +1681,9 @@
     let currentIdx = 0;
     let isMoving = false;
     let autoplayTimer = null;
-    const AUTOPLAY_TIME = 6500;
+    let sliderVisible = true;
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    const AUTOPLAY_TIME = 5000;
 
     totalNumEl.textContent = String(total).padStart(2, '0');
 
@@ -1641,7 +1714,7 @@
         thumbsContainer.scrollBy({ left: tLeft - cLeft - 20, behavior: 'smooth' });
       }
 
-      setTimeout(() => { isMoving = false; }, 750);
+      setTimeout(() => { isMoving = false; }, 900);
     }
 
     function next() { goToSlide(currentIdx + 1); }
@@ -1690,6 +1763,7 @@
     // Autoplay
     function startAutoplay() {
       stopAutoplay();
+      if (reduceMotion.matches || document.hidden || !sliderVisible || sliderContainer.matches(':hover') || sliderContainer.contains(document.activeElement)) return;
       autoplayTimer = setInterval(next, AUTOPLAY_TIME);
     }
     function stopAutoplay() {
@@ -1703,7 +1777,15 @@
     if (sliderContainer) {
       sliderContainer.addEventListener('mouseenter', stopAutoplay);
       sliderContainer.addEventListener('mouseleave', startAutoplay);
+      sliderContainer.addEventListener('focusin', stopAutoplay);
+      sliderContainer.addEventListener('focusout', () => requestAnimationFrame(startAutoplay));
+      new IntersectionObserver(([entry]) => {
+        sliderVisible = entry.isIntersecting;
+        if (sliderVisible) startAutoplay(); else stopAutoplay();
+      }, { threshold: 0.15 }).observe(sliderContainer);
     }
+    document.addEventListener('visibilitychange', () => document.hidden ? stopAutoplay() : startAutoplay());
+    reduceMotion.addEventListener?.('change', () => reduceMotion.matches ? stopAutoplay() : startAutoplay());
 
     // Initialize
     goToSlide(0);
@@ -1733,7 +1815,8 @@
           label=root.querySelector('.ww-label'),title=root.querySelector('.ww-title'),idx=root.querySelector('.ww-index');
     const n=items.length,last=n-1;
     let turn=0,target=0,active=-1,M={},dragY=null,moved=0,timer=0,visible=true;
-    const to=v=>{target=clamp(v,0,last+1)};
+    let frame=0;
+    const to=v=>{target=clamp(v,0,last+1);if(visible&&!frame)frame=requestAnimationFrame(draw)};
     const cards=items.map((it,i)=>{
       const a=document.createElement('a');a.className='ww-card';a.href=it.href;a.target='_blank';a.rel='noopener';
       a.innerHTML=`<span class="ww-face"><img src="${it.shot||it.image}" alt="${it.title} — ${it.tag}" draggable="false"><span class="ww-go">Visit ↗</span></span>`;
@@ -1754,12 +1837,13 @@
       cards.forEach(c=>{c.style.width=cw+'px';c.style.height=ch+'px';c.style.marginLeft=-cw/2+'px';c.style.marginTop=-ch/2+'px'});
       label.style.fontSize=title.style.fontSize=ch*.124+'px';
       idx.style.fontSize=Math.max(11,ch*.045)+'px';
+      if(visible&&!frame)frame=requestAnimationFrame(draw);
     };
     new ResizeObserver(size).observe(stage);size();
     const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-    new IntersectionObserver(e=>{visible=e[0].isIntersecting}).observe(root);
+    new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(visible&&!frame)frame=requestAnimationFrame(draw)}).observe(root);
     function draw(){
-      requestAnimationFrame(draw); if(!visible)return;
+      frame=0;if(!visible)return;
       const gap=target-turn;
       turn=Math.abs(gap)<.0005?target:turn+gap*(reduced.matches?1:EASE);
       const m=clamp(turn,0,1),pos=Math.max(0,turn-1);
@@ -1776,8 +1860,8 @@
       if(near!==active){active=near;
         title.innerHTML=`<small>${items[near].tag}</small>${items[near].title}`;
         [...idx.children].forEach((li,i)=>li.firstChild.classList.toggle('on',i===near));}
+      if(!reduced.matches&&Math.abs(target-turn)>.0005)frame=requestAnimationFrame(draw);
     }
-    requestAnimationFrame(draw);
     stage.addEventListener('wheel',e=>{
       const next=target+e.deltaY/WHEEL;
       if(next>0&&next<last+1)e.preventDefault();
@@ -1799,7 +1883,7 @@
     // lazy images (below the fold only)
     $('img').forEach(i=>{if(!i.closest('#home,#intro,.ww')&&!i.loading)i.loading='lazy'});
     // reveal + stagger
-    const groups=['.sec-head','.plans-grid .plan-card','.value-item','.contact-panel','form','.fbrand','.fright','footer .f-row'];
+    const groups=['.sec-head','.plans-grid .plan-card','.value-item','.contact-panel','form','.about-visual','.about-body > p','.ww','.sf-grid > div','.sf-bottom'];
     groups.forEach(g=>$(g).forEach((el,i)=>{el.setAttribute('data-rv','');el.style.setProperty('--d',Math.min(i%4,3)*90+'ms')}));
     const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
     $('[data-rv]').forEach(el=>ro.observe(el));
