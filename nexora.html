@@ -8,19 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#05070d;
-    --panel:#0b1120;
-    --panel-2:#101a30;
-    --panel-3:#141f38;
-    --line: rgba(140,170,220,0.14);
+    --bg:#fbf8f1;
+    --panel:#fffdf8;
+    --panel-2:#f4f0e7;
+    --panel-3:#eee8dc;
+    --line: rgba(38,53,74,0.16);
     --blue-deep:#0e2a6b;
     --blue-1:#1a4fd6;
-    --blue-2:#3b7cf0;
-    --blue-3:#6fa8ff;
-    --ice:#bcd8ff;
-    --white:#f3f7ff;
-    --muted:#7f93b8;
-    --muted-2:#59688a;
+    --blue-2:#245dcc;
+    --blue-3:#37669f;
+    --ice:#526f98;
+    --white:#172236;
+    --muted:#5e6b7e;
+    --muted-2:#788397;
     --gold:#ffb454;
     --radius: 18px;
     --ease: cubic-bezier(.16,.84,.44,1);
@@ -35,6 +35,12 @@
     -webkit-font-smoothing:antialiased;
   }
   ::selection{background:var(--blue-2);color:#fff;}
+  #intro .caption .line,#intro .skip:hover,.hero-slider .slide-content{color:#f3f7ff;}
+  header{background:rgba(251,248,241,.92);}
+  header.scrolled{background:rgba(251,248,241,.97);box-shadow:0 10px 30px -12px rgba(23,34,54,.16);}
+  .site-footer{background:#fffdf8;color:#5e6b7e;}
+  .sf-brand,.sf-col h3{color:#172236;}
+  .sf-col li,.sf-col a{color:#5e6b7e;}
   h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
   .mono{font-family:'JetBrains Mono',monospace;}
   a{color:inherit;text-decoration:none;}
@@ -250,12 +256,12 @@
     inset: 0;
     background: linear-gradient(
       90deg,
-      rgba(5, 7, 13, 0.95) 0%,
-      rgba(5, 7, 13, 0.72) 48%,
-      rgba(5, 7, 13, 0.35) 80%,
-      rgba(5, 7, 13, 0.55) 100%
+      rgba(5, 7, 13, 0.38) 0%,
+      rgba(5, 7, 13, 0.16) 40%,
+      rgba(5, 7, 13, 0.04) 72%,
+      rgba(5, 7, 13, 0.12) 100%
     ),
-    radial-gradient(circle at 18% 50%, rgba(14, 42, 107, 0.45) 0%, rgba(5, 7, 13, 0.85) 100%);
+    radial-gradient(circle at 18% 50%, rgba(14, 42, 107, 0.08) 0%, rgba(5, 7, 13, 0.16) 100%);
   }
   .hero-slider .slider-item .slide-content {
     position: absolute;
@@ -398,7 +404,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--blue-3);
+    color: #c8ddff;
     margin-bottom: 4px;
     font-family: 'JetBrains Mono', monospace;
   }
@@ -407,7 +413,7 @@
     font-weight: 700;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: var(--white);
+    color: #fff;
     line-height: 1.25;
     font-family: 'Space Grotesk', sans-serif;
   }
@@ -892,8 +898,8 @@
   /* Cinematic hero motion, kept subtle and GPU friendly. */
   .hero-slider .slider-item::before{content:"";position:absolute;inset:-2%;z-index:0;background-image:inherit;background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.08);will-change:transform}
   .hero-slider .slider-item .slide-overlay{z-index:1}
-  .hero-slider .slider-item.active::before{animation:heroPhotoSettle 7s var(--silk) both}
-  @keyframes heroPhotoSettle{from{transform:scale(1.13)}to{transform:scale(1.025)}}
+  .hero-slider .slider-item.active::before{animation:heroPhotoSettle 4s var(--silk) both}
+  @keyframes heroPhotoSettle{from{transform:scale(1.1)}to{transform:scale(1.025)}}
   .hero-slider .slider-item h1.hero-title .grad{background-size:220% 100%;animation:heroTextGlow 5s ease-in-out infinite alternate}
   @keyframes heroTextGlow{from{background-position:0% 50%;filter:drop-shadow(0 0 0 rgba(111,168,255,0))}to{background-position:100% 50%;filter:drop-shadow(0 0 12px rgba(59,124,240,.32))}}
   #home .eyebrow .dot{position:relative}
@@ -901,6 +907,75 @@
   @keyframes heroDotPulse{0%{transform:scale(.65);opacity:.8}100%{transform:scale(1.8);opacity:0}}
   .hero-off .slider-item.active::before,.hero-off .slider-item h1.hero-title .grad,.hero-off #home .eyebrow .dot::after{animation-play-state:paused}
   @media(prefers-reduced-motion:reduce){.hero-slider .slider-item.active::before,.hero-slider .slider-item h1.hero-title .grad,#home .eyebrow .dot::after{animation:none!important}.hero-slider .slider-item::before{transform:none;will-change:auto}}
+  /* Bright service photography with readable foreground text. */
+  header{background:rgba(255,250,240,.94);border-bottom-color:rgba(38,53,74,.14);}
+  header .brand,header nav a{color:#172236;}
+  header .brand small{color:#5e6b7e;}
+  header nav a.active,header nav a:hover{color:#245dcc;}
+  .hero-slider .slider-item .slide-overlay{background:linear-gradient(90deg,rgba(5,7,13,.38) 0%,rgba(5,7,13,.16) 40%,rgba(5,7,13,.04) 72%,rgba(5,7,13,.12) 100%),radial-gradient(circle at 18% 50%,rgba(14,42,107,.08) 0%,rgba(5,7,13,.16) 100%);}
+  .hero-slider .slider-item h1.hero-title{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.42);}
+  .hero-slider .slider-item .hero-sub{color:#f4f7fc;text-shadow:0 1px 8px rgba(0,0,0,.55);}
+  .hero-slider .thumb-card .tc-title{color:#fff;}
+  .hero-slider .thumb-card .tc-tag{color:#c8ddff;}
+  /* Use one warm cream surface throughout; keep supplied photos as photos. */
+  body{background:#fffaf0!important;color:#172236;}
+  .bg-grid,.bg-glow{display:none!important;}
+  #intro{background:#fffaf0!important;}
+  #intro .door-frame{background:linear-gradient(145deg,#fffdf8,#f4eee2)!important;box-shadow:none;}
+  header,header.scrolled,#mmPanel{background:rgba(255,250,240,.97)!important;color:#172236;border-color:rgba(38,53,74,.14);}
+  header .brand,header nav a,header nav a.active,header nav a:hover{color:#172236;}
+  header .brand small{color:#5e6b7e;}
+  section:not(#home){background:#fffaf0!important;}
+  #plans,#projects,#contact{background:#fffaf0!important;}
+  .plan-card,.project-card,.ww,.about-visual,.contact-panel{background:#fffdf8!important;border-color:#e5dfd2;box-shadow:0 12px 36px rgba(64,52,30,.07);}
+  .plan-meta,.about-stats div,.contact-link,.field input,.field select,.field textarea{background:#f7f1e5!important;color:#172236;border-color:#e5dfd2;}
+  .connect-visual{background:#fffdf8!important;border-color:#e5dfd2;}
+  .connect-chip{background:#fffaf0!important;color:#172236;border-color:#e5dfd2;box-shadow:0 4px 14px rgba(64,52,30,.08);}
+  .connect-core{background:#f4eee2!important;color:#37669f;border-color:#d9d0bf;box-shadow:none;}
+  .site-footer{background:#fffdf8!important;color:#5e6b7e;border-color:#e5dfd2;}
+  .sf-brand,.sf-col h3{color:#172236;}.sf-col li,.sf-col a{color:#5e6b7e;}
+  .hero-slider .slider-item .slide-overlay{background:linear-gradient(90deg,rgba(255,250,240,.7) 0%,rgba(255,250,240,.42) 38%,rgba(255,250,240,.12) 68%,rgba(255,250,240,.04) 100%)!important;}
+  .hero-slider .slider-item h1.hero-title{color:#172236!important;text-shadow:0 1px 10px rgba(255,255,255,.55);}
+  .hero-slider .slider-item .hero-sub{color:#26364b!important;text-shadow:0 1px 8px rgba(255,255,255,.75);}
+  .hero-slider .thumb-card .thumb-overlay{background:linear-gradient(180deg,transparent 42%,rgba(255,250,240,.96) 100%)!important;}
+  .hero-slider .thumb-card .tc-title,.hero-slider .thumb-card .tc-tag{color:#172236!important;}
+  .hero-slider .thumb-card img{filter:brightness(1)!important;}
+  .hero-slider .slider-btn{background:rgba(255,250,240,.92);color:#172236;border-color:#e5dfd2;}
+
+  /* High contrast footer on the cream site theme. */
+  .site-footer{background:#fffaf0!important;color:#26364b!important;border:1px solid #e2d8c7!important;box-shadow:0 12px 34px rgba(50,42,28,.08)!important;}
+  .site-footer::before{display:none!important;}
+  .site-footer .sf-brand,.site-footer .sf-col h3{color:#172236!important;}
+  .site-footer .sf-intro,.site-footer .sf-col li,.site-footer .sf-col a,.site-footer .sf-hours,.site-footer .sf-bottom{color:#46566d!important;}
+  .site-footer .sf-col a:hover,.site-footer .sf-bottom a:hover{color:#245dcc!important;}
+  .site-footer .sf-contact-item svg{color:#245dcc!important;}
+  .site-footer .sf-hours,.site-footer .sf-rule{border-color:#ded5c5!important;}
+  .site-footer .sf-word-base{stroke:rgba(55,102,159,.36)!important;}
+
+
+  /* Blue text for hero level names and their thumbnail labels. */
+  .hero-slider .slider-item .eyebrow{color:#245dcc!important;}
+  .hero-slider .slider-item h1.hero-title,.hero-slider .slider-item h1.hero-title .grad{color:#245dcc!important;-webkit-text-fill-color:#245dcc!important;text-shadow:none!important;}
+  .hero-slider .thumb-card .tc-title,.hero-slider .thumb-card .tc-tag{color:#245dcc!important;}
+
+  /* Responsive, compact entrance for the ten services section. */
+  #plans .sec-head{width:min(100%,820px);margin-bottom:clamp(34px,5vw,56px);}
+  #plans .sec-head h2{max-width:15ch;font-size:clamp(2rem,5vw,3.5rem);}
+  #plans .sec-head p{max-width:42ch;font-size:clamp(1rem,1.5vw,1.1rem);}
+  #plans .sec-head.in .eyebrow{animation:plansEyebrowIn .55s cubic-bezier(.16,.84,.44,1) both;}
+  #plans .sec-head.in h2{animation:plansTitleIn .8s cubic-bezier(.16,.84,.44,1) .08s both;}
+  #plans .sec-head.in p{animation:plansIntroIn .65s cubic-bezier(.16,.84,.44,1) .2s both;}
+  @keyframes plansEyebrowIn{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
+  @keyframes plansTitleIn{from{opacity:0;translate:0 24px;filter:blur(7px);scale:.98}to{opacity:1;translate:0 0;filter:blur(0);scale:1}}
+  @keyframes plansIntroIn{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+  @media(max-width:560px){#plans .sec-head h2{max-width:12ch}}
+  @media(prefers-reduced-motion:reduce){#plans .sec-head.in .eyebrow,#plans .sec-head.in h2,#plans .sec-head.in p{animation:none;filter:none;translate:none;scale:1;opacity:1}}
+
+  /* Blend the navigation into the hero photo; restore a solid surface after scrolling. */
+  header{transition:background .45s ease,border-color .45s ease,backdrop-filter .45s ease;}
+  header:not(.scrolled){background:transparent!important;border-bottom-color:transparent!important;backdrop-filter:none;}
+  header.scrolled{background:rgba(255,250,240,.96)!important;border-bottom-color:#e5dfd2!important;backdrop-filter:blur(14px);}
+
 </style>
 </head>
 <body>
@@ -994,98 +1069,74 @@
     <!-- Slides List -->
     <div class="slider-list">
 
-      <!-- Slide 1: Web Systems -->
-      <div class="slider-item active" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=85');">
+      <!-- Seven local service photos; each slide displays its photo name. -->
+      <div class="slider-item active" style="background-image: url('Web%20Platform.jpg');">
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <div class="eyebrow"><span class="dot"></span> Full-Stack Technology Studio</div>
-          <h1 class="hero-title">We build the <span class="grad">systems</span><br>your business runs on.</h1>
-          <p class="hero-sub">Nexora designs and ships modern, high-speed websites, web apps, and digital platforms engineered for conversion, reliability, and effortless scale.</p>
-          <div class="hero-cta">
-            <a href="plans.html" class="btn btn-primary">View Web Plans ↓</a>
-            <a href="contact.html" class="btn btn-ghost">Get Free Consultation</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat"><b>10+</b><span>Service Lines</span></div>
-            <div class="stat"><b>1 Hr</b><span>Support SLA</span></div>
-            <div class="stat"><b>₹4,999</b><span>Starting Price</span></div>
-          </div>
+          <div class="eyebrow"><span class="dot"></span> Web Platform</div>
+          <h1 class="hero-title"><span class="grad">Web Platform</span></h1>
+          <p class="hero-sub">Web platforms built for your next stage of growth.</p>
+          <div class="hero-cta"><a href="contact.html" class="btn btn-primary">Discuss Your Project</a></div>
         </div>
       </div>
 
-      <!-- Slide 2: Custom Software -->
-      <div class="slider-item" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=85');">
+      <div class="slider-item" style="background-image: url('Cybersecurity.jpg');">
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <div class="eyebrow"><span class="dot"></span> Bespoke Software Architecture</div>
-          <h1 class="hero-title">Custom <span class="grad">software</span> &<br>enterprise workflows.</h1>
-          <p class="hero-sub">Tailored business management systems, billing engines, inventory portals, and CRM/ERP modules built around your company's exact operational requirements.</p>
-          <div class="hero-cta">
-            <a href="contact.html?service=Custom%20Software%20Solutions" class="btn btn-primary">Discuss Project →</a>
-            <a href="#plans" class="btn btn-ghost">Explore Software Plans</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat"><b>7–30d</b><span>Rapid Delivery</span></div>
-            <div class="stat"><b>60 Days</b><span>Free Maintenance</span></div>
-            <div class="stat"><b>₹15,000</b><span>Starting Price</span></div>
-          </div>
+          <div class="eyebrow"><span class="dot"></span> Cybersecurity</div>
+          <h1 class="hero-title"><span class="grad">Cybersecurity</span></h1>
+          <p class="hero-sub">Protect your systems, data, and customers with confidence.</p>
+          <div class="hero-cta"><a href="contact.html" class="btn btn-primary">Discuss Your Project</a></div>
         </div>
       </div>
 
-      <!-- Slide 3: Mobile App Development -->
-      <div class="slider-item" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=2000&q=85');">
+      <div class="slider-item" style="background-image: url('Cloud%20Computing%20%26%20Infrastructure.jpg');">
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <div class="eyebrow"><span class="dot"></span> iOS & Android Ecosystems</div>
-          <h1 class="hero-title">Mobile apps <span class="grad">engineered</span><br>to engage & scale.</h1>
-          <p class="hero-sub">High-fidelity Android and cross-platform Flutter applications with real-time Firebase backend sync, push notifications, and intuitive UI/UX design.</p>
-          <div class="hero-cta">
-            <a href="contact.html?service=Mobile%20App%20Development" class="btn btn-primary">Start Your App →</a>
-            <a href="#projects" class="btn btn-ghost">View Shipped Apps</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat"><b>10–30d</b><span>Turnaround</span></div>
-            <div class="stat"><b>Native</b><span>Performance</span></div>
-            <div class="stat"><b>₹12,999</b><span>Starting Price</span></div>
-          </div>
+          <div class="eyebrow"><span class="dot"></span> Cloud Computing</div>
+          <h1 class="hero-title"><span class="grad">Cloud Computing & Infrastructure</span></h1>
+          <p class="hero-sub">Reliable cloud infrastructure designed to scale with your business.</p>
+          <div class="hero-cta"><a href="contact.html" class="btn btn-primary">Discuss Your Project</a></div>
         </div>
       </div>
 
-      <!-- Slide 4: Cloud Infrastructure & DevOps -->
-      <div class="slider-item" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85');">
+      <div class="slider-item" style="background-image: url('Consulting%20%26%20Business%20Operations.jpg');">
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <div class="eyebrow"><span class="dot"></span> Cloud & DevOps Engineering</div>
-          <h1 class="hero-title">Scalable <span class="grad">cloud infra</span><br>with 99.9% uptime.</h1>
-          <p class="hero-sub">Secure AWS, Google Cloud, and VPS deployments. Automated container orchestration with Docker, continuous backups, load balancing, and 24/7 uptime monitoring.</p>
-          <div class="hero-cta">
-            <a href="contact.html?service=Cloud%20Deployment%20%26%20Management" class="btn btn-primary">Deploy to Cloud →</a>
-            <a href="#plans" class="btn btn-ghost">Cloud Packages</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat"><b>99.9%</b><span>Uptime SLA</span></div>
-            <div class="stat"><b>30 Days</b><span>Monitoring</span></div>
-            <div class="stat"><b>₹4,999</b><span>Starting Price</span></div>
-          </div>
+          <div class="eyebrow"><span class="dot"></span> Business Consulting</div>
+          <h1 class="hero-title"><span class="grad">Consulting & Business Operations</span></h1>
+          <p class="hero-sub">Clear strategy and smarter operations for ambitious teams.</p>
+          <div class="hero-cta"><a href="contact.html" class="btn btn-primary">Discuss Your Project</a></div>
         </div>
       </div>
 
-      <!-- Slide 5: Cybersecurity & Threat Defense -->
-      <div class="slider-item" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=85');">
+      <div class="slider-item" style="background-image: url('Artificial%20Intelligence%20%26%20Data%20Analytics.jpg');">
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <div class="eyebrow"><span class="dot"></span> Zero Trust & Defense</div>
-          <h1 class="hero-title">Enterprise <span class="grad">cybersecurity</span><br>& vulnerability audit.</h1>
-          <p class="hero-sub">Protect your intellectual property and web infrastructure. Penetration testing, malware remediation, firewall hardening, and strict security compliance audits.</p>
-          <div class="hero-cta">
-            <a href="contact.html?service=Cybersecurity%20%26%20Security%20Audit" class="btn btn-primary">Secure Systems →</a>
-            <a href="contact.html" class="btn btn-ghost">Request Audit</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat"><b>Full</b><span>Security Audit</span></div>
-            <div class="stat"><b>30 Days</b><span>Guaranteed Defense</span></div>
-            <div class="stat"><b>₹5,999</b><span>Starting Price</span></div>
-          </div>
+          <div class="eyebrow"><span class="dot"></span> AI & Data Analytics</div>
+          <h1 class="hero-title"><span class="grad">Artificial Intelligence & Data Analytics</span></h1>
+          <p class="hero-sub">Turn data into practical insights and intelligent products.</p>
+          <div class="hero-cta"><a href="contact.html" class="btn btn-primary">Discuss Your Project</a></div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image: url('Software%20Testing%20%26%20Maintenance.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="eyebrow"><span class="dot"></span> Testing & Maintenance</div>
+          <h1 class="hero-title"><span class="grad">Software Testing & Maintenance</span></h1>
+          <p class="hero-sub">Keep every release dependable with ongoing testing and care.</p>
+          <div class="hero-cta"><a href="contact.html" class="btn btn-primary">Discuss Your Project</a></div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image: url('Mobile%20Apps.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="eyebrow"><span class="dot"></span> Mobile Apps</div>
+          <h1 class="hero-title"><span class="grad">Mobile Apps</span></h1>
+          <p class="hero-sub">Mobile experiences that keep your customers connected.</p>
+          <div class="hero-cta"><a href="contact.html" class="btn btn-primary">Discuss Your Project</a></div>
         </div>
       </div>
 
@@ -1093,47 +1144,55 @@
 
     <!-- Thumbnail Carousel (Bottom Right) -->
     <div class="slider-thumbs" id="sliderThumbs">
-      
       <div class="thumb-card active" data-slide="0">
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" fetchpriority="high" alt="Code on a screen for web platform development" />
+        <img src="Web%20Platform.jpg" width="720" height="480" decoding="async" alt="Web Platform" />
         <div class="thumb-overlay">
-          <span class="tc-tag">01 · Web</span>
-          <h4 class="tc-title">WEB PLATFORMS</h4>
+          <span class="tc-tag">01 &#183; Web Platform</span>
+          <h4 class="tc-title">Web Platform</h4>
         </div>
       </div>
-
       <div class="thumb-card" data-slide="1">
-        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" alt="Developer working on custom business software" />
+        <img src="Cybersecurity.jpg" width="720" height="480" decoding="async" alt="Cybersecurity" />
         <div class="thumb-overlay">
-          <span class="tc-tag">02 · Software</span>
-          <h4 class="tc-title">ENTERPRISE ERP</h4>
+          <span class="tc-tag">02 &#183; Cybersecurity</span>
+          <h4 class="tc-title">Cybersecurity</h4>
         </div>
       </div>
-
       <div class="thumb-card" data-slide="2">
-        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" alt="Smartphone representing mobile app development" />
+        <img src="Cloud%20Computing%20%26%20Infrastructure.jpg" width="720" height="480" decoding="async" alt="Cloud Computing & Infrastructure" />
         <div class="thumb-overlay">
-          <span class="tc-tag">03 · Apps</span>
-          <h4 class="tc-title">MOBILE APPS</h4>
+          <span class="tc-tag">03 &#183; Cloud Computing</span>
+          <h4 class="tc-title">Cloud Computing & Infrastructure</h4>
         </div>
       </div>
-
       <div class="thumb-card" data-slide="3">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" alt="Cloud server infrastructure" />
+        <img src="Consulting%20%26%20Business%20Operations.jpg" width="720" height="480" decoding="async" alt="Consulting & Business Operations" />
         <div class="thumb-overlay">
-          <span class="tc-tag">04 · Cloud</span>
-          <h4 class="tc-title">CLOUD & DEVOPS</h4>
+          <span class="tc-tag">04 &#183; Business Consulting</span>
+          <h4 class="tc-title">Consulting & Business Operations</h4>
         </div>
       </div>
-
       <div class="thumb-card" data-slide="4">
-        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&amp;fit=crop&amp;w=720&amp;h=1030&amp;q=85" width="720" height="1030" decoding="async" alt="Cybersecurity and digital threat defense" />
+        <img src="Artificial%20Intelligence%20%26%20Data%20Analytics.jpg" width="720" height="480" decoding="async" alt="Artificial Intelligence & Data Analytics" />
         <div class="thumb-overlay">
-          <span class="tc-tag">05 · Security</span>
-          <h4 class="tc-title">CYBER DEFENSE</h4>
+          <span class="tc-tag">05 &#183; AI & Data Analytics</span>
+          <h4 class="tc-title">Artificial Intelligence & Data Analytics</h4>
         </div>
       </div>
-
+      <div class="thumb-card" data-slide="5">
+        <img src="Software%20Testing%20%26%20Maintenance.jpg" width="720" height="480" decoding="async" alt="Software Testing & Maintenance" />
+        <div class="thumb-overlay">
+          <span class="tc-tag">06 &#183; Testing & Maintenance</span>
+          <h4 class="tc-title">Software Testing & Maintenance</h4>
+        </div>
+      </div>
+      <div class="thumb-card" data-slide="6">
+        <img src="Mobile%20Apps.jpg" width="720" height="480" decoding="async" alt="Mobile Apps" />
+        <div class="thumb-overlay">
+          <span class="tc-tag">07 &#183; Mobile Apps</span>
+          <h4 class="tc-title">Mobile Apps</h4>
+        </div>
+      </div>
     </div>
 
     <!-- Navigation Controls & Progress Indicator -->
@@ -1172,7 +1231,7 @@
   <div class="sec-head">
     <div class="eyebrow"><span class="dot"></span> Services & Pricing</div>
     <h2>Ten ways we can move you forward.</h2>
-    <p>Pick a track below, or talk to us if your project spans a few. Every plan includes direct support after delivery — no disappearing after the invoice.</p>
+    <p>Explore ten practical services for your next step.</p>
   </div>
 
   <div class="plans-grid">
@@ -1682,10 +1741,40 @@
     let isMoving = false;
     let autoplayTimer = null;
     let sliderVisible = true;
-    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
-    const AUTOPLAY_TIME = 5000;
+    const AUTOPLAY_TIME = 4000;
 
     totalNumEl.textContent = String(total).padStart(2, '0');
+
+    function animateLevelOpen(targetIdx) {
+      const source = thumbs[targetIdx]?.querySelector('img');
+      if (!source || !sliderContainer) return;
+      const sourceRect = source.getBoundingClientRect();
+      const heroRect = sliderContainer.getBoundingClientRect();
+      if (!sourceRect.width || !sourceRect.height || !heroRect.width || !heroRect.height) return;
+
+      const boxW = Math.min(sourceRect.width, 220);
+      const boxH = Math.min(sourceRect.height, 260);
+      const left = Math.max(12, Math.min(sourceRect.left, window.innerWidth - boxW - 12));
+      const top = Math.max(12, Math.min(sourceRect.top, window.innerHeight - boxH - 12));
+      const expandingImage = source.cloneNode();
+      expandingImage.alt = '';
+      expandingImage.setAttribute('aria-hidden', 'true');
+      Object.assign(expandingImage.style, {
+        position: 'fixed', left: `${left}px`, top: `${top}px`,
+        width: `${boxW}px`, height: `${boxH}px`, objectFit: 'cover',
+        borderRadius: '18px', zIndex: '90', pointerEvents: 'none',
+        boxShadow: '0 18px 55px rgba(23,34,54,.28)',
+        transition: 'left 900ms cubic-bezier(.16,.84,.44,1), top 900ms cubic-bezier(.16,.84,.44,1), width 900ms cubic-bezier(.16,.84,.44,1), height 900ms cubic-bezier(.16,.84,.44,1), border-radius 900ms cubic-bezier(.16,.84,.44,1)'
+      });
+      document.body.appendChild(expandingImage);
+      requestAnimationFrame(() => {
+        Object.assign(expandingImage.style, {
+          left: `${heroRect.left}px`, top: `${heroRect.top}px`,
+          width: `${heroRect.width}px`, height: `${heroRect.height}px`, borderRadius: '0px'
+        });
+      });
+      window.setTimeout(() => expandingImage.remove(), 960);
+    }
 
     function goToSlide(targetIdx) {
       if (isMoving) return;
@@ -1694,6 +1783,7 @@
       if (targetIdx >= total) targetIdx = 0;
       if (targetIdx < 0) targetIdx = total - 1;
 
+      animateLevelOpen(targetIdx);
       slides[currentIdx].classList.remove('active');
       thumbs[currentIdx].classList.remove('active');
 
@@ -1763,7 +1853,7 @@
     // Autoplay
     function startAutoplay() {
       stopAutoplay();
-      if (reduceMotion.matches || document.hidden || !sliderVisible || sliderContainer.matches(':hover') || sliderContainer.contains(document.activeElement)) return;
+      if (document.hidden || !sliderVisible) return;
       autoplayTimer = setInterval(next, AUTOPLAY_TIME);
     }
     function stopAutoplay() {
@@ -1775,17 +1865,12 @@
     }
 
     if (sliderContainer) {
-      sliderContainer.addEventListener('mouseenter', stopAutoplay);
-      sliderContainer.addEventListener('mouseleave', startAutoplay);
-      sliderContainer.addEventListener('focusin', stopAutoplay);
-      sliderContainer.addEventListener('focusout', () => requestAnimationFrame(startAutoplay));
       new IntersectionObserver(([entry]) => {
         sliderVisible = entry.isIntersecting;
         if (sliderVisible) startAutoplay(); else stopAutoplay();
       }, { threshold: 0.15 }).observe(sliderContainer);
     }
     document.addEventListener('visibilitychange', () => document.hidden ? stopAutoplay() : startAutoplay());
-    reduceMotion.addEventListener?.('change', () => reduceMotion.matches ? stopAutoplay() : startAutoplay());
 
     // Initialize
     goToSlide(0);
